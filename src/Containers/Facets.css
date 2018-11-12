@@ -1,0 +1,26 @@
+.facets_container{
+    margin:0px;
+    padding:15px;
+}
+
+.facets{
+    border:2px solid #eee
+}
+
+.doc_count{
+    color:#bb69bb
+}
+
+li{
+    list-style: none;
+    cursor: pointer;
+}
+ul{
+    padding: 0px;
+    margin-top: 10px;
+    line-height: 30px;  
+}
+
+.hits_container{
+    display:inline-flex;
+}
