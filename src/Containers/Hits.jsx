@@ -5741,15 +5741,20 @@ class Hits extends Component {
      ))
      const status= newData.map((item)=>(
       item.hits.hits.map((status,index)=>(
-     
-         status._source.status === "passing" ? <li className="btn btn-success" style={{borderRadius:"50%"}}></li> : <li className="btn btn-danger" style={{borderRadius:'50%'}}></li>
-      
+        <li key={index}>{status._source.status}</li>
+        // status._source.status === "passing" ? <div className="btn btn-success" style={{borderRadius:"50%",background:'green',height:'10px',width:'10px'}}></div> : <div className="btn btn-danger" style={{borderRadius:"50%",background:'red',height:'10px',width:'10px'}}></div>
          ))      
      ))
+     const date= newData.map((item)=>(
+      item.hits.hits.map((date,index)=>(
+        <li key={index}>{date._source.timestamp}</li>       
+      
+         ))      
+     ))    
      
     return (
        <Aux>
-           <div className="col-xs-5">
+           <div className="col-xs-3">
                   Healthcheck_name
                   <ul>
                     {healthcheck_name}
@@ -5786,15 +5791,14 @@ class Hits extends Component {
                     </ul>
                   </div>  
                   <div className="col-xs-1">
-                    Status
-                    <ul>
-                      {status}
-                    </ul>
-                  </div>    
-                 
-       </Aux>
-                
-    )
+                    Status                   
+                      {status}                   
+                  </div>      
+                  <div className="col-xs-1">
+                    Last Update                   
+                      {date}                   
+                  </div>                   
+       </Aux>  )
   }
 }
 
